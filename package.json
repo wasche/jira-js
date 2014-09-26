@@ -1,0 +1,23 @@
+{
+  "name": "jira",
+  "version": "0.0.1",
+  "author": "Wil Asche <wil@asche.us>",
+  "description": "JS wrapper around the Jira REST API",
+  "keywords": [
+    "jira",
+    "api"
+  ],
+  "homepage": "http://github.com/wasche/jira-js",
+  "bugs": "http://github.com/wasche/jira-js/issues",
+  "license": "MIT",
+  "main": "lib/Jira.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/wasche/jira-js.git"
+  },
+  "dependencies": {
+    "request": "^2.44.0",
+    "sprintf-js": "0.0.7",
+    "underscore": "^1.7.0"
+  }
+}
