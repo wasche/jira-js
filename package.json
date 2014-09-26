@@ -1,5 +1,5 @@
 {
-  "name": "jira",
+  "name": "jira-wrapper",
   "version": "0.0.1",
   "author": "Wil Asche <wil@asche.us>",
   "description": "JS wrapper around the Jira REST API",
