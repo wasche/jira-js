@@ -1,0 +1,77 @@
+{
+  "fields": {
+    "summary": "sample issue 1",
+    "description": "this is a description",
+    "lastViewed" : "2014-09-30T08:05:23.688-0400",
+    "attachment": [],
+    "fixVersions": [
+      {
+        "releaseDate": "2014-01-01",
+        "name": "2014-01-01",
+        "self": "http://localhost:6767/api/version/140101",
+        "released": false,
+        "id": "140101",
+        "archived": false,
+        "description": "2014-01-01"
+      }
+    ],
+    "priority": {
+      "name": "p1",
+      "id": "1",
+      "self": "http://localhost:6767/api/priority/1"
+    },
+    "creator": {},
+    "issuetype": {
+      "name": "Task",
+      "id": "1",
+      "description": "A task",
+      "subtask": false,
+      "self": "http://localhost:6767/api/issuetype/1"
+    },
+    "project": {
+      "projectCategory": {},
+      "name": "MyProject",
+      "id": "1",
+      "key": "MY",
+      "self": "http://localhost:6767/api/project/1"
+    },
+    "status": {
+      "name": "In Progress",
+      "id": "1",
+      "description": "in progress",
+      "self": "http://localhost:6767/api/status/1",
+      "statusCategory": {
+        "colorName": "yellow",
+        "name": "In Progress",
+        "id": 1,
+        "key": "indeterminate",
+        "self": "http://localhost:6767/api/statuscategory/1"
+      }
+    },
+    "reporter": {
+      "emailAddress": "user@host.com",
+      "active": true,
+      "name": "user",
+      "displayName": "user",
+      "self": "http://localhost:6767/api/user?username=user"
+    },
+    "assignee": {
+      "emailAddress": "user@host.com",
+      "active": true,
+      "name": "user",
+      "displayName": "user",
+      "self": "http://localhost:6767/api/user?username=user"
+    },
+    "resolution": null,
+    "resolutiondate": null,
+    "aggregateprogress": {
+      "percent": 0,
+      "progress": 0,
+      "total": 0  
+    },
+    "timeoriginalestimate": 100800
+  },
+  "key": "MY-1",
+  "id": 1,
+  "self": "http://localhost:6767/api/issue/1"
+}
