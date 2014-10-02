@@ -5,7 +5,7 @@ var http = require('http')
   , _ = require('underscore')
   , jira = require('../lib/Jira')({
     strictSSL: false,
-    uri: 'http://localhost:6767/api'
+    uri: 'http://localhost:6767'
   })
   ;
 
@@ -18,7 +18,7 @@ describe('Jira', function(){
       console.error(req.method, req.url);
 
       if (req.method === 'GET'){
-        if (req.url === '/api/issue/1?fields=*all'){
+        if (req.url === '/issue/1?fields=*all'){
           res.end(JSON.stringify(require('./data/issue-1.json')));
           return;
         }
@@ -34,7 +34,7 @@ describe('Jira', function(){
         req.on('end', function(){
           body = JSON.parse(body);
 
-          if (req.url === '/api/issue/1?fields=*all'){
+          if (req.url === '/issue/1?fields=*all'){
             var i = require('./data/issue-1.json');
             body.fields && _.each(body.fields, function(value, key){
               i.fields[key] = value;
