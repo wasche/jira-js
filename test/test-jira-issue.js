@@ -15,7 +15,6 @@ describe('Jira', function(){
 
   before(function(){
     server = http.createServer(function(req, res){
-      console.error(req.method, req.url);
 
       if (req.method === 'GET'){
         if (req.url === '/issue/1?fields=*all'){
