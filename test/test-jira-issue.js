@@ -72,7 +72,7 @@ describe('Jira', function(){
     it('should update an issue when given fields', function(done){
       jira.issue(1, null, {summary: 'new summary!'}, function(err, res, issue){
         assert(!err, 'Should not receive an error.');
-        assert(typeof issue === 'object', 'should receive an Issue object.');
+        assert.equal(typeof issue, 'object', 'should receive an Issue object.');
         assert.equal(issue.id, 'MY-1', 'should fill issue fields from response json');
         assert.equal(issue.summary, 'new summary!', 'should have the updated fields');
         done();
