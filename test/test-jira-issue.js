@@ -3,21 +3,22 @@
 var http = require('http')
   , assert = require('assert')
   , _ = require('underscore')
-  , jira = require('../lib/Jira')({
-    strictSSL: false,
-    uri: 'http://localhost:6767'
-  })
   ;
 
 describe('Jira', function(){
 
-  var server;
+  var server
+    , jira = require('../lib/Jira')({
+      strictSSL: false,
+      uri: 'http://localhost:7001/test-jira-issue'
+    })
+    ;
 
   before(function(){
     server = http.createServer(function(req, res){
 
       if (req.method === 'GET'){
-        if (req.url === '/issue/1?fields=*all'){
+        if (req.url === '/test-jira-issue/issue/1.json?fields=*all'){
           res.end(JSON.stringify(require('./data/issue-1.json')));
           return;
         }
@@ -33,7 +34,7 @@ describe('Jira', function(){
         req.on('end', function(){
           body = JSON.parse(body);
 
-          if (req.url === '/issue/1?fields=*all'){
+          if (req.url === '/test-jira-issue/issue/1.json?fields=*all'){
             var i = require('./data/issue-1.json');
             body.fields && _.each(body.fields, function(value, key){
               i.fields[key] = value;
@@ -51,7 +52,7 @@ describe('Jira', function(){
       res.statusCode = 400;
       res.end('400');
     });
-    server.listen(6767);
+    server.listen(7001);
   });
 
   after(function(){

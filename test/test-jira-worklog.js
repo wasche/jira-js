@@ -2,16 +2,16 @@
 
 var http = require('http')
   , assert = require('assert')
-  , _ = require('underscore')
-  , jira = require('../lib/Jira')({
-    strictSSL: false,
-    uri: 'http://localhost:6767'
-  })
   ;
 
 describe('Jira', function(){
 
-  var server;
+  var server
+    , jira = require('../lib/Jira')({
+      strictSSL: false,
+      uri: 'http://localhost:7000/test-worklog'
+    })
+    ;
 
   before(function(){
     server = http.createServer(function(req, res){
@@ -26,7 +26,7 @@ describe('Jira', function(){
         req.on('end', function(){
           body = JSON.parse(body);
 
-          if (/\/issue\/(\d)\/worklog/.test(req.url)){
+          if (/\/test-worklog\/issue\/(\d)\/worklog/.test(req.url)){
             var log = {
               timeSpent: body.timeSpent
             };
@@ -55,7 +55,7 @@ describe('Jira', function(){
       res.statusCode = 400;
       res.end('400');
     });
-    server.listen(6767);
+    server.listen(7000);
   });
 
   after(function(){

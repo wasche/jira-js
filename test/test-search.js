@@ -1,13 +1,10 @@
 /* global describe, it, before, beforeEach */
 
-var assert = require('assert')
-  , jira = require('../lib/Jira')({
-    strictSSL: false,
-    uri: 'http://localhost:6767'
-  })
-  ;
+var assert = require('assert');
 
 describe('Search', function(){
+
+  var jira = require('../lib/Jira')();
 
   describe('#quote', function(){
 
